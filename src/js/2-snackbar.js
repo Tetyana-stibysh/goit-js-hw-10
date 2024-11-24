@@ -3,6 +3,8 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', handlerSubmit);
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import iconResolv from '../img/ok.svg';
+import iconReject from '../img/error.svg';
 
 function handlerSubmit(event) {
   event.preventDefault();
@@ -18,23 +20,23 @@ function handlerSubmit(event) {
   })
     .then(value =>
       iziToast.show({
-        class: 'message',
-        message: `✅ Fulfilled promise in ${inputValue}ms`,
+        message: `Fulfilled promise in ${inputValue}ms`,
         messageColor: '#ffffff',
-        messageSize: '16px',
-        messageLineHeight: '1.5',
-        backgroundColor: '#ef4040',
+        title: 'OK',
+        titleColor: '#ffffff',
+        iconUrl: '../img/ok.svg',
+        backgroundColor: '#59A10D',
         position: 'topRight',
       })
     )
     .catch(error =>
       iziToast.show({
-        class: 'message',
-        message: `❌ Rejected promise in ${inputValue}ms`,
+        message: `Rejected promise in ${inputValue}ms`,
         messageColor: '#ffffff',
-        messageSize: '16px',
-        messageLineHeight: '1.5',
-        backgroundColor: '#59A10D',
+        title: 'Error',
+        titleColor: '#ffffff',
+        iconUrl: '../img/error.svg',
+        backgroundColor: '#EF4040',
         position: 'topRight',
       })
     );
