@@ -1,5 +1,5 @@
 const form = document.querySelector('.form');
-// console.dir(form);
+
 form.addEventListener('submit', handlerSubmit);
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -11,7 +11,6 @@ function handlerSubmit(event) {
   const form = event.target;
   const inputValue = form.elements.delay.value;
   const checkBox = form.elements.state.value;
-  //   console.log(form.elements.delay.value);
 
   makePromise({
     value: checkBox,
@@ -24,7 +23,7 @@ function handlerSubmit(event) {
         messageColor: '#ffffff',
         title: 'OK',
         titleColor: '#ffffff',
-        iconUrl: '../img/ok.svg',
+        iconUrl: iconResolv,
         backgroundColor: '#59A10D',
         position: 'topRight',
       })
@@ -35,7 +34,7 @@ function handlerSubmit(event) {
         messageColor: '#ffffff',
         title: 'Error',
         titleColor: '#ffffff',
-        iconUrl: '../img/error.svg',
+        iconUrl: iconReject,
         backgroundColor: '#EF4040',
         position: 'topRight',
       })
